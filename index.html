@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Dijkstra</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300i,400,700,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Roboto+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Righteous|Roboto+Condensed&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pathway+Gothic+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Michroma|Muli&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="slidewrapper" id="slidewrapper-id">
+        <div class="cacslide">
+            <div class="heading-text">
+                <span style="color: beige;">be<h6 style="color: #fff;display: inline;font-family: 'Pacifico', cursive;">
+                        W@terme)on</h6></span>
+            </div>
+            <ul>
+                <li class="active">
+                    <div class="motslide">
+                        <div class="anh" style="background-image: linear-gradient(to top,rgba(0,0,0, 0.8),rgba(0,0,0, 0.8)),
+                        url('./img/tappezzerianovecento_bw.jpg');background-position: center 85%">
+                            <div class="slide-content">
+                                <div class="slide-img">
+                                    <div class="slide-img-bg"
+                                        style="background-image: url('./img/tappezzerianovecento.jpg')"></div>
+                                </div>
+                                <div class="slide-img">
+                                    <div class="slide-img-bg"
+                                        style="background-image: url('./img/tappezzerianovecento.jpg')"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="textnoidung text-transform-1">
+                            <h3>Thuật toán </h3>
+                            <h3>Dijkstra</h3>
+                            <em><small>là một thuật toán giải quyết bài toán đường đi ngắn nhất nguồn đơn trong một đồ
+                                    thị có hướng không có cạnh mang trọng số âm</small></em>
+                            <p>Jan 2019</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="motslide">
+                        <div class="anh" style="background-image: linear-gradient(to top,rgba(0,0,0, 0.8),rgba(0,0,0, 0.8)),
+                        url('./img/greeninbox_bw.jpg');background-position: center 60%">
+                            <div class="slide-content">
+                                <div class="slide-img">
+                                    <div class="slide-img-bg" style="background-image: url('./img/greeninbox.jpg')">
+                                    </div>
+                                </div>
+                                <div class="slide-img">
+                                    <div class="slide-img-bg" style="background-image: url('./img/greeninbox.jpg')">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="textnoidung text-transform-1" style="top: 70%">
+                            <h3>Vấn đề</h3>
+                            <em><small>Cho một đồ thị có hướng G
+                                    (
+                                    V
+                                    ,
+                                    →
+                                    E
+                                    )
+                                    , một hàm trọng số
+                                    w
+                                    :
+                                    →
+                                    E
+                                    →
+                                    R
+                                    +
+                                    và một đỉnh
+                                    s
+                                    . Tìm đường đi ngắn nhất từ
+                                    s
+                                    tới mọi đỉnh trong
+                                    G
+                                    .</small></em>
+                            <p>Jan 2019</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="motslide">
+                        <div class="anh" style="background-image: linear-gradient(to top,rgba(0,0,0, 0.8),rgba(0,0,0, 0.8)),
+                        url('./img/dastore_bw.jpg');background-position: center 80%">
+                            <div class="slide-content">
+                                <div class="slide-img">
+                                    <div class="slide-img-bg" style="background-image: url('./img/dastore.jpg')"></div>
+                                </div>
+                                <div class="slide-img">
+                                    <div class="slide-img-bg" style="background-image: url('./img/dastore.jpg')"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="textnoidung text-transform-1" style="top: 71%">
+                            <h3>Ứng dụng</h3>
+                            <em><small>Giúp tìm ra đường đi ngắn nhất đơn giản nhất</small></em>
+                            <p>Jan 2019</p>
+                        </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="chuyensilde">
+            <ul>
+                <li class="kichhoat">1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </div>
+        <div class="section-Perspective d-flex justify-content-end">
+            <div class="row pt-5">
+                <i class="fas fa-bars menu-bar"></i>
+            </div>
+            <div class="row home-menu">
+                <ul>
+                    <li>Home</li>
+                    <li> Products</li>
+                    <li>Services</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container-fluid up-icon">
+            <a href="#slidewrapper-id" style="transition: .5s;"><i class="fas fa-cloud-upload-alt"></i></a>
+        </div>
+    </div>
+
+    <main>
+
+        <div class="section-2">
+            <div class="container">
+                <div class="row">
+                    <h3>giới <span style="color: #39d6c0">thiệu</span></h3>
+                </div>
+                <div class="row">
+                    <div class="nd-cot-1 flex-column d-flex justify-content-center align-items-center"
+                        style="background-color: #39d6c0;width: 60%;">
+                        <div class="content-col" style="width: 70%;">
+                            <h6>Thuật toán </h6>
+                            <h2>Dijkstra</h2>
+                            <p class="py-4" style="font-size: 80%">Thuật toán Dijkstra cho phép tìm đường đi ngắn nhất
+                                từ một đỉnh s đến các đỉnh còn lại của đồ thị và chiều dài (trọng số ) tương ứng. Phương
+                                pháp của thuật toán là xác định tuần tự đỉnh có chiều dài đến s theo thứ tự tăng dần.
+                                Thuật toán được xây dựng trên cơ sở gán cho mỗi đỉnh các nhãn tạm thời. Nhãn tạm thời
+                                của các đỉnh cho biết cận trên của chiều dài đường đi ngắn nhất từ s đến đỉnh đó. Nhãn
+                                của các đỉnh sẽ biến đổi trong các bước lặp, mà ở mỗi bước lặp sẽ có một nhãn tạm thời
+                                trở thành chính thức. Nếu nhãn của một đỉnh nào đó trở thành chính thức thì đó cũng
+                                chính là chiều dài ngắn nhất của đường đi từ s đến đỉnh đó.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="nd-cot-2" style="width:40%;">
+                        <div class="anh"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="nd-cot-1" style="width: 40%;">
+                        <div class="anh">
+                        </div>
+                    </div>
+                    <div class="nd-cot-2 flex-column d-flex justify-content-center align-items-center"
+                        style="width:60%;background-color: #fff;">
+                        <div class="content-col" style="width: 70%;">
+
+                            <h6>Mô tả</h6>
+                            <h2>Thuật toán</h2>
+                            <p class="py-4" style="font-size: 80%">
+                                Trước hết ta xét
+                                s
+                                và các hàng xóm của nó, gọi là tập
+                                N
+                                (
+                                s
+                                )
+                                . Gọi
+                                u
+                                là một hàng xóm với độ dài cạnh
+                                w
+                                (
+                                s
+                                →
+                                u
+                                )
+                                nhỏ nhất. Khoảng cách ngắn nhất từ
+                                s
+                                tới
+                                u
+                                là bao nhiêu? Câu trả lời chính là
+                                w
+                                (
+                                s
+                                →
+                                u
+                                )
+                                , vì nếu không, đường đi ngắn nhất từ
+                                s
+                                tới
+                                u
+                                đó phải đi qua một hàng xóm khác của
+                                s
+                                , và do đó, sẽ dài hơn
+                                w
+                                (
+                                s
+                                →
+                                u
+                                )
+                                . Từ đó ta suy ra
+                                δ
+                                (
+                                s
+                                ,
+                                u
+                                )
+                                =
+                                w
+                                (
+                                s
+                                →
+                                u
+                                )
+                                .
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-gallery">
+            <div class="container wrapper-gallery">
+                <div class="heading-gallery">
+                    <div class="text-gallet">
+                        <h6>Ứng dụng </h6>
+                        <h2>& cách sử dụng</h2>
+                        <p class="p-before">Nhập các thông tin các cạnh vào ô tương ứng. Ở hình bên ta có cạnh AC dài
+                            4. Ta sẽ nhập ở ô input node là A, nhập C ở ô Neighbor và sau đó nhập 4 ở ô input length.
+                            Mỗi lần nhập xong một cạnh ta nhấn nút thêm thông tin.
+                            Nhập lần lượt cho các cạnh còn lại. Sau đó có hai select cho ta chọn điểm xuất phát và
+                            điểm kết thúc. Ứng dụng sẽ dựa vào các thông tin vừa nhập để thưc hiện tìm đường đi ngắn
+                            nhất
+                            giữa điểm xuất phát và điểm kết thúc.
+                        </p>
+                        <p>Nhấn nút thực hiện ứng dụng sẽ hiện ra một thông báo đưa ra thông tin về đường đi ngắn nhất
+                            và
+                            độ dài đường đi đó.
+                        </p>
+
+                    </div>
+                    <div class="img-gallery">
+                        <div class="img-1" style="background-image:url(./img/1_lzYuC6dIVTVl0gt3MOuCyw.jpeg) ">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section-6">
+            <div class="container-fluid p-0 bg-carousel">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active">
+                                    <div class="wrapper-img">
+                                        <img src="./img/Just-Try-It.png"
+                                            style="width: 40%; transform: translateY(-16%);" alt="First slide">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="wrapper-text">
+                            <span>Try it</span>
+                            <blockquote
+                                style="margin-left: -25%; color:#fff; font-size:20px;width: 80%; font-style:normal; font-weight:100;word-spacing:3px">
+                                Dưới đây là chương trình thực hiện thuật toán Dijkstra
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container number">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="wrapper-number">
+                            <h3>Node</h3>
+                            <div class="img-frame">
+                                <img src="./img/white-circle-pngc09-4dd3-a6e5-e4a33d437599.png" alt="">
+                                <input type="text" name="node" />
+                            </div>
+                            <p>Nhập các node </p>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 number-9">
+                        <div class="wrapper-number">
+                            <h3>Neighbor</h3>
+                            <div class="img-frame">
+                                <img src="./img/white-circle-pngc09-4dd3-a6e5-e4a33d437599.png" alt="">
+                                <input type="text" name="neighbor" />
+                            </div>
+                            <p>Nhập các điểm mà node đó lối tới</p>
+                            <form action="/action_page.php">
+                                <select name="cars" class="custom-select custom-select-sm my-4 section-value-start">
+                                </select>
+                            </form>
+                            <button type="button" id="btn-finish"
+                                style="border-radius: 0; font-size: 80%; font-weight: 400;"
+                                class="btn btn-outline-secondary text-white ml-4">Điểm đầu</button>
+                            <button type="button" id="btn-start"
+                                style="border-radius: 0; font-size: 80%; font-weight: 400;"
+                                class="btn btn-outline-secondary text-white">Điểm cuối</button>
+                            <div class="visible-value text-white mt-4"></div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 number-24">
+                        <div class="wrapper-number">
+                            <h3>Length</h3>
+                            <div class="img-frame">
+                                <img src="./img/white-circle-pngc09-4dd3-a6e5-e4a33d437599.png" alt="">
+                                <input type="text" name="length" />
+                            </div>
+                            <p>Nhập độ dài từ node đến các điểm</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center" style="margin-top: -6%;">
+                    <button class="btn btn-outline-info mr-5"  type="button"
+                        style="border-radius: 0; font-size: 80%; font-weight: 400;">Thêm node</button>
+                    <button type="button" id="btn" style="border-radius: 0; font-size: 80%; font-weight: 400;"
+                        class="btn btn-outline-success mr-5" data-toggle="modal" data-target="#myModal">
+                        Thực hiện
+                    </button>
+
+                    <div class="modal fade" id="myModal">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Modal Heading</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+
+                                <div class="modal-body">
+                                    Modal body..
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section-4">
+            <div class="container">
+                <div class="row clearfix">
+                    <div class="col-md-6">
+                        <h5>FUSCE UT VELIT LAOREET TEMPUS TORTOR</h5>
+                        <hr class="no_line" style="margin: 0 auto 35px;">
+                        <h2 style="color: #fff; width: 90%;">We have clients in over 20 countries</h2>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-end align-items-center">
+                        <h6><a style="color: #fff;" href="https://themes.muffingroup.com/be/company5/services/">SEE
+                                OUR
+                                SERVICES<i class="fas fa-caret-right"></i></a></h6>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center align-items-center ">
+                    <div class="map" style="margin: 8% 0">
+                        <img src="./img/company5_map.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container-fluid p-0">
+            <div class="content-up mx-auto">
+                <div class="container">
+                    <div class="row d-flex justify-content-center align-items-center">
+                        <div class="col-md-4">
+                            <img src="./img/home_webdesign_new.png" alt="">
+                        </div>
+                        <div class="col-md-4 mx-auto d-flex justify-content-center align-items-center">
+                            <h3 style="color:#fff;margin-left: 10px;font-weight: 300"><span class="themecolor"
+                                    style="font-weight: 700;color: #59a3ff">SIGN IN TO RECEIVE</span><br> NEW
+                                PROJECTS<br> ON YOUR E-MAIL</h3>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="section-5 d-flex justify-content-center align-items-center">
+                                <div class="form-inline">
+                                    <input type="text" name="Email" id="Email" placeholder="Your email" size="30"
+                                        class="px-2 py-2" style="font-weight: 400; font-size: 60%;height: 35px;">
+                                    <input type="button" style="font-weight: 300; font-size: 80%;border-radius: 0"
+                                        value="Contact Us" class="btn btn-outline-primary btn-sm ml-3">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-down">
+                <div class="social container py-4">
+                    <div class="row d-flex justify-content-between flex-row">
+                        <h1 style="font-weight: 600; color: #fff">Watermelon</h1>
+                        <div class="logo">
+                            <i style="color: #3b5998" class="fab fa-facebook-square m-3"></i>
+                            <i style="color: #E1306C;" class="fab fa-instagram m-3"></i>
+                            <i style="color: #00acee" class="fab fa-twitter m-3"></i>
+                            <i style="color: #c4302b" class="fab fa-youtube m-3"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer_copy">
+                    <div class="container">
+                        <ul id="menu-main-menu-1" class="social-menu">
+                            <li
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-2 current_page_item menu-item-5">
+                                <a href="https://themes.muffingroup.com/be/webdesign/" aria-current="page">Home</a>
+                            </li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38"><a
+                                    href="https://themes.muffingroup.com/be/webdesign/about/">About
+                                    BeWebdesign</a></li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-75"><a
+                                    href="https://themes.muffingroup.com/be/webdesign/what-we-offer/">What we
+                                    offer</a></li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80"><a
+                                    href="https://themes.muffingroup.com/be/webdesign/realisations/">Realisations</a>
+                            </li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81"><a
+                                    href="https://themes.muffingroup.com/be/webdesign/contact-us/">Contact
+                                    us</a></li>
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2205">
+                                <a target="_blank"
+                                    href="https://1.envato.market/c/1289117/275988/4415?u=https%3A%2F%2Fthemeforest.net%2Fitem%2Fbetheme-responsive-multipurpose-wordpress-theme%2F7758048%3Fref%3Dmuffingroup"><span
+                                        style="color:#7DCDFF !important">Buy now</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
