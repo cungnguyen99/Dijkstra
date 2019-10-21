@@ -1,6 +1,4 @@
 const problems = {};
-
-
 var st="";
 var fs="";
 $(document).ready(function() {
@@ -57,17 +55,19 @@ $(document).ready(function() {
 
 $('#btn-finish').on('click', function() {
   st=$(".section-value-start option:selected").text();
-  alert(st);
 });
 
-$('.section-value-finish').on('change', function() {
-  fs=$(".section-value-finish option:selected").text();
+$('#btn-start').on('click', function() {
+  fs=$(".section-value-start option:selected").text();
 });
 
 $('button').on('click', function() {
   let name = $('input[name="node"]').val();
   let neighbor = $('input[name="neighbor"]').val();
   let length = $('input[name="length"]').val();
+  $('input[name="node"]').val('');
+  $('input[name="neighbor"]').val('');
+  $('input[name="length"]').val('');
   if(problems[name] == undefined){
     problems[name]={}
   }
@@ -81,11 +81,7 @@ $('button').on('click', function() {
 $('#btn').on('click', function() {
   console.log(dijkstra(problems));
 })
-  }, false)
-
-  function bestCopyEver(src) {
-    return Object.assign({}, src);
-  }
+}, false)
 
 const lowestCostNode = (costs, processed) => {
   return Object.keys(costs).reduce((lowest, node) => {
@@ -127,8 +123,8 @@ const dijkstra = (graph) => {
     node = lowestCostNode(costs, processed);
   }
 
-  let optimalPath = ['finish'];
-  let parent = parents.finish;
+  let optimalPath = [fs];
+  let parent = parents[fs];
   while (parent) {
     optimalPath.push(parent);
     parent = parents[parent];
@@ -136,7 +132,7 @@ const dijkstra = (graph) => {
   optimalPath.reverse();
 
   const results = {
-    distance: costs.finish,
+    distance: costs[fs],
     path: optimalPath
   };
 
