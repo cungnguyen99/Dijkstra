@@ -67,6 +67,11 @@ $('#btnReset').on('click',function(){
     delete problems[key];
   }
   $(".visible-value").empty();
+  $('.section-value-start').children().remove()
+  $('#btn-finish').addClass('isHidden');
+  $('#btn-finish').css('visibility','')
+  $('#btn-start').addClass('isHidden');
+  $('#btn-start').css('visibility','');  
 })
 
 $('#btnaddNode').on('click', function() {
@@ -75,22 +80,28 @@ $('#btnaddNode').on('click', function() {
   let length = $('input[name="length"]').val();
   let btnFs=$('#btn-finish');
   let btnSt=$('#btn-start');
+  $('input[name="node"]').val('');
+  $('input[name="neighbor"]').val('');
+  $('input[name="length"]').val('');
   if(name===''||neighbor===''||length===''){
     alert('Mời nhập đầy đủ thông tin');
+  }else if(name!==''&&neighbor==='null'&&length==='null'){
+    problems[name]={}
   }else{
-    btnFs.css('visibility','visible');
-    btnSt.css('visibility','visible');
-    $('input[name="node"]').val('');
-    $('input[name="neighbor"]').val('');
-    $('input[name="length"]').val('');
-    if(problems[name] == undefined){
-      problems[name]={}
+    if(isNaN(length)){
+      alert('Hãy nhập số trong ô lenght và chữ trong ô name, neighbor');
+    }else{
+      btnFs.css('visibility','visible');
+      btnSt.css('visibility','visible');
+      if(problems[name] == undefined){
+        problems[name]={}
+      }
+      problems[name][neighbor] = parseInt(length)
+      $(".visible-value").append(name+neighbor+"="+length+' | ');
     }
-    problems[name][neighbor] = parseInt(length)
-    $(".visible-value").append(name+neighbor+"="+length);
+   } 
     $('.section-value-start').append('<option value="'+name+'">'+name+'</option>');
     $('.section-value-finish').append('<option>'+name+'</option>');
-  }
   console.log(problems);
 })
 
@@ -101,8 +112,11 @@ $('#btnres').on('click', function() {
   }else{
     var res=dijkstra(problems);
     console.log(res);
-    modalBody.html(res.distance)
+    modalBody.html('Khoảng cách từ '+st+' đến '+fs+' là: '+res.distance+'<br>'+'Đường đi: '+res.path);
   }
+  $('input[name="node"]').val('');
+  $('input[name="neighbor"]').val('');
+  $('input[name="length"]').val('');
 })
 }, false)
 

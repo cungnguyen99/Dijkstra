@@ -110,7 +110,7 @@ h6{
     animation-delay: .2s;
 }
 .cacslide ul li.active .anh .slide-content .slide-img .slide-img-bg{
-    background-position: center 50px;
+    background-position: center 40px;
     height: 100%;
     position: absolute;
     left: 0;
@@ -319,7 +319,7 @@ ul li.active .motslide .textnoidung-2{
     background-image: url('./img/home_webdesign_pattern2.png');
     background-repeat: repeat;
     background-color: #3a3a3a;
-    height: 46vh;
+    height: 34vh;
 }
 .content-down .footer_copy {
     border-top: 1px solid rgba(255,255,255,.1);
@@ -387,7 +387,12 @@ cite{
 #btn-start{
     visibility: hidden;
 }
-
+.isHidden{
+    visibility: hidden;
+}
+.isVisible{
+    visibility: visible;
+}
 .number{
     padding-top: 15%;
 }

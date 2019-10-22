@@ -33,15 +33,15 @@
                 <li class="active">
                     <div class="motslide">
                         <div class="anh" style="background-image: linear-gradient(to top,rgba(0,0,0, 0.8),rgba(0,0,0, 0.8)),
-                        url('./img/tappezzerianovecento_bw.jpg');background-position: center 85%">
+                        url('./img/pexels-photo-220351.jpeg');background-position: center 85%">
                             <div class="slide-content">
                                 <div class="slide-img">
                                     <div class="slide-img-bg"
-                                        style="background-image: url('./img/tappezzerianovecento.jpg')"></div>
+                                        style="background-image: url('./img/pexels-photo-220351.jpeg')"></div>
                                 </div>
                                 <div class="slide-img">
                                     <div class="slide-img-bg"
-                                        style="background-image: url('./img/tappezzerianovecento.jpg')"></div>
+                                        style="background-image: url('./img/pexels-photo-220351.jpeg')"></div>
                                 </div>
                             </div>
                         </div>
@@ -55,55 +55,35 @@
                 <li>
                     <div class="motslide">
                         <div class="anh" style="background-image: linear-gradient(to top,rgba(0,0,0, 0.8),rgba(0,0,0, 0.8)),
-                        url('./img/greeninbox_bw.jpg');background-position: center 60%">
+                        url('./img/pexels-photo-267885.jpeg');background-position: center 60%;">
                             <div class="slide-content">
                                 <div class="slide-img">
-                                    <div class="slide-img-bg" style="background-image: url('./img/greeninbox.jpg')">
+                                    <div class="slide-img-bg" style="background-image: url('./img/pexels-photo-267885.jpeg')">
                                     </div>
                                 </div>
                                 <div class="slide-img">
-                                    <div class="slide-img-bg" style="background-image: url('./img/greeninbox.jpg')">
+                                    <div class="slide-img-bg" style="background-image: url('./img/pexels-photo-267885.jpeg')">
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="textnoidung text-transform-1">
                             <h3>Vấn đề</h3>
-                            <em><small>Cho một đồ thị có hướng G
-                                    (
-                                    V
-                                    ,
-                                    →
-                                    E
-                                    )
-                                    , một hàm trọng số
-                                    w
-                                    :
-                                    →
-                                    E
-                                    →
-                                    R
-                                    +
-                                    và một đỉnh
-                                    s
-                                    . Tìm đường đi ngắn nhất từ
-                                    s
-                                    tới mọi đỉnh trong
-                                    G
-                                    .</small></em>
+                            <em><small>Cho một đồ thị có hướng G(V,E), một hàm trọng số w:→E→R+ và một đỉnh s. Tìm đường đi ngắn nhất
+                                từ s tới mọi đỉnh trong G.</small></em>
                                 </div>
                     </div>
                 </li>
                 <li>
                     <div class="motslide">
                         <div class="anh" style="background-image: linear-gradient(to top,rgba(0,0,0, 0.8),rgba(0,0,0, 0.8)),
-                        url('./img/dastore_bw.jpg');background-position: center 80%">
+                        url('./img/pexels-photo-356086.jpeg');background-position: center 80%">
                             <div class="slide-content">
                                 <div class="slide-img">
-                                    <div class="slide-img-bg" style="background-image: url('./img/dastore.jpg')"></div>
+                                    <div class="slide-img-bg" style="background-image: url('./img/pexels-photo-356086.jpeg')"></div>
                                 </div>
                                 <div class="slide-img">
-                                    <div class="slide-img-bg" style="background-image: url('./img/dastore.jpg')"></div>
+                                    <div class="slide-img-bg" style="background-image: url('./img/pexels-photo-356086.jpeg')"></div>
                                 </div>
                             </div>
                         </div>
@@ -199,11 +179,18 @@
                         <h2>& cách sử dụng</h2>
                         <p class="p-before">Nhập các thông tin các cạnh vào ô tương ứng. Ở hình bên ta có cạnh AC dài
                             4. Ta sẽ nhập ở ô input node là A, nhập C ở ô Neighbor và sau đó nhập 4 ở ô input length.
-                            Mỗi lần nhập xong một cạnh ta nhấn nút thêm thông tin.
-                            Nhập lần lượt cho các cạnh còn lại. Sau đó có hai select cho ta chọn điểm xuất phát và
+                            Mỗi lần nhập xong một cạnh ta nhấn nút thêm thông tin. Sau đó có hai select cho ta chọn điểm xuất phát và
                             điểm kết thúc. Ứng dụng sẽ dựa vào các thông tin vừa nhập để thưc hiện tìm đường đi ngắn
                             nhất
                             giữa điểm xuất phát và điểm kết thúc.
+                            <br>
+                            <em><b> Lưu ý:</b> Đối với đồ thị vô hướng không được nhập thông tin trùng nhau. Do 
+                                không được nhập thông tin trùng nhau nên khi một điểm có liên kết với cạnh khác nhưng
+                                đã được nhập thông tin rồi thì ta chỉ cần nhập tên điểm đó ở ô node còn 2 ô còn lại 
+                                ta viết chữ null.
+                                Ví dụ: Điểm A đến C có độ dài là 5. Khi ta đã nhập thông tin cho A đến C bằng
+                            5 rồi thì không được nhập thông tin đó lặp lại với điểm C. Tức không được nhập C đến
+                        A bằng 5 nữa.</em>
                         </p>
                         <p>Nhấn nút thực hiện ứng dụng sẽ hiện ra một thông báo đưa ra thông tin về đường đi ngắn nhất
                             và
@@ -300,7 +287,7 @@
                     </button>
 
                     <button type="button" id="btnReset" style="border-radius: 0; font-size: 80%; font-weight: 400;"
-                    class="btn btn-outline-success mr-5">
+                    class="btn btn-outline-warning mr-5">
                         Làm lại
                     </button>
 
@@ -333,7 +320,6 @@
             <div class="content-down">
                 <div class="social container py-4">
                     <div class="row d-flex justify-content-between flex-row">
-                        <h2 style="font-weight: 400; color: #fff">Dijkstra Algorithm</h2>
                     </div>
                 </div>
                 <div class="container mb-2">
