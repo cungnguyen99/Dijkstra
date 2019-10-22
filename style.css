@@ -195,7 +195,7 @@ ul li.active .motslide .textnoidung{
     transition: all 1s;
 }
 ul li.active .motslide .text-transform-1{
-    top: 63%;
+    top: 80%;
     left: 4%;
     animation: text-1 1s forwards;
 }
@@ -237,20 +237,17 @@ ul li.active .motslide .text-transform-3{
     }
 }
 .textnoidung h3{
-    font-size: 360%;
+    font-size: 250%;
     font-weight: 900;
     text-transform: uppercase;
-    line-height: .7;
+    line-height: .9;
     color: #fff;
-}
-.textnoidung p{
-    color: #fff;
-    font-size: 70%;
 }
 .textnoidung small{
     color: white;
     font-family: 'Dancing Script', cursive; 
-    font-size: 150%;
+    font-size: 130%;
+    width: 20%;
 }
 .textnoidung .btn{
     background-color: rgb(89, 163, 255);
@@ -317,79 +314,12 @@ ul li.active .motslide .textnoidung-2{
     background-position: center;
     background-size: cover;
 }  
-/* section-4 */
-.section-4{
-    background-color: #252931;
-    padding: 7% 0;
-}
-.section-4 h5{
-    color: #3661cf;
-    padding-bottom: 30px; 
-    border-bottom: 2px solid #424953; 
-    display: inline-block;
-    font-size: 85%;
-    font-weight: 400;
-    letter-spacing: 2px;
-    word-spacing: 2px;
-}
-.section-4 h2{
-    font-size: 50px;
-    line-height: 50px;
-    font-weight: 300;
-    letter-spacing: -1px;
-}
-.section-4 h6{
-    font-size: 65%;
-    line-height: 26px;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-.section-4 i{
-    color: #39d6c0;
-}
-.section-4 .row .col-md-7,.col-md-5{
-    position: relative;
-    margin-bottom: 6%;
-    margin-top: 4%;
-}
-.section-4 h1{
-    font-size: 40px; 
-    margin-bottom: 5%;
-}
-ul.list-star li{
-    list-style: none;
-    color: #fff;
-    margin: 5% 0;
-    font-size: 90%;
-    font-weight: 300;
-}
-ul.list-star li i{
-    font-size: 70%;
-    color: #fff;
-    margin-right: 3%;
-}
 /* footer */
-.logo i{
-    font-size: 180%;
-}
-.logo i{
-    transition: all .5s;
-    cursor: pointer;
-}
-.logo i:hover{
-    transform: scale(2)
-}
-.content-up{
-    background-image: url('./img/home_webdesign_newsletter_bg.jpg');
-    padding: 11% 0;
-    background-position: left top;
-    background-size: cover;
-}
 .content-down{
     background-image: url('./img/home_webdesign_pattern2.png');
     background-repeat: repeat;
     background-color: #3a3a3a;
-    height: 33vh;
+    height: 46vh;
 }
 .content-down .footer_copy {
     border-top: 1px solid rgba(255,255,255,.1);
@@ -402,6 +332,16 @@ ul.list-star li i{
     margin-right: 6px;
     padding-right: 6px;
     border-right: 1px solid rgba(255,255,255,.1);
+}
+.heading-info h5{
+    color: white;
+    font-size: 100%;
+    font-weight: 400;
+}
+cite{
+    font-size: 90%;
+    font-weight: 200;
+    color: white;
 }
 .social-menu li a{
     color: #65666c;
@@ -441,6 +381,11 @@ ul.list-star li i{
     margin-left: -25%;
     margin-top: 15%;
     margin-bottom: 5%;
+}
+
+#btn-finish,
+#btn-start{
+    visibility: hidden;
 }
 
 .number{

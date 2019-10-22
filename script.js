@@ -55,31 +55,54 @@ $(document).ready(function() {
 
 $('#btn-finish').on('click', function() {
   st=$(".section-value-start option:selected").text();
+  alert("Bạn đã chọn điểm "+st+" làm điểm xuất phát");
 });
 
 $('#btn-start').on('click', function() {
   fs=$(".section-value-start option:selected").text();
+  alert("Bạn đã họn điểm "+fs+" làm điểm đích.");
 });
+$('#btnReset').on('click',function(){
+  for (var key in problems) {
+    delete problems[key];
+  }
+  $(".visible-value").empty();
+})
 
-$('button').on('click', function() {
+$('#btnaddNode').on('click', function() {
   let name = $('input[name="node"]').val();
   let neighbor = $('input[name="neighbor"]').val();
   let length = $('input[name="length"]').val();
-  $('input[name="node"]').val('');
-  $('input[name="neighbor"]').val('');
-  $('input[name="length"]').val('');
-  if(problems[name] == undefined){
-    problems[name]={}
+  let btnFs=$('#btn-finish');
+  let btnSt=$('#btn-start');
+  if(name===''||neighbor===''||length===''){
+    alert('Mời nhập đầy đủ thông tin');
+  }else{
+    btnFs.css('visibility','visible');
+    btnSt.css('visibility','visible');
+    $('input[name="node"]').val('');
+    $('input[name="neighbor"]').val('');
+    $('input[name="length"]').val('');
+    if(problems[name] == undefined){
+      problems[name]={}
+    }
+    problems[name][neighbor] = parseInt(length)
+    $(".visible-value").append(name+neighbor+"="+length);
+    $('.section-value-start').append('<option value="'+name+'">'+name+'</option>');
+    $('.section-value-finish').append('<option>'+name+'</option>');
   }
-  problems[name][neighbor] = parseInt(length)
-  $(".visible-value").append(name+neighbor+"="+length);
-  $('.section-value-start').append('<option value="'+name+'">'+name+'</option>');
-  $('.section-value-finish').append('<option>'+name+'</option>');
   console.log(problems);
 })
 
-$('#btn').on('click', function() {
-  console.log(dijkstra(problems));
+$('#btnres').on('click', function() {
+  let modalBody=$('.modal-body');
+  if(Object.keys(problems).length===0){
+    modalBody.html('Mời nhập đầy đủ thông tin');
+  }else{
+    var res=dijkstra(problems);
+    console.log(res);
+    modalBody.html(res.distance)
+  }
 })
 }, false)
 
