@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Dijkstra</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300i,400,700,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Roboto+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Righteous|Roboto+Condensed&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pathway+Gothic+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Michroma|Muli&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="slidewrapper" id="slidewrapper-id">
+        <div class="cacslide">
+            <div class="heading-text">
+                <span style="color: beige;">easy<h5 style="color: #fff;display: inline;font-family: 'Pacifico', cursive;">
+                        Di)kstr@</h5></span>
+            </div>
+            <ul>
+                <li class="active">
+                    <div class="motslide">
+                        <div class="anh" style="background-image: linear-gradient(to top,rgba(0,0,0, 0.8),rgba(0,0,0, 0.6)),
+                        url('./img/LRM_EXPORT_20191022_221146.jpg');background-position: center 85%">
+                            <div class="slide-content">
+                                <div class="slide-img">
+                                    <div class="slide-img-bg"
+                                        style="background-image: url('./img/pexels-photo-220351.jpeg')"></div>
+                                </div>
+                                <div class="slide-img">
+                                    <div class="slide-img-bg"
+                                        style="background-image: url('./img/pexels-photo-220351.jpeg')"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="textnoidung text-transform-1">
+                            <h3>Dijkstra</h3>
+                            <em><small>là một thuật toán giải quyết bài toán đường đi ngắn nhất nguồn đơn trong một đồ
+                                    thị có hướng không có cạnh mang trọng số âm</small></em>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="motslide">
+                        <div class="anh" style="background-image: linear-gradient(to top,rgba(0,0,0, 0.8),rgba(0,0,0, 0.6)),
+                        url('./img/LRM_EXPORT_20191022_215012.jpg');background-position: center 60%;">
+                            <div class="slide-content">
+                                <div class="slide-img">
+                                    <div class="slide-img-bg" style="background-image: url('./img/pexels-photo-267885.jpeg')">
+                                    </div>
+                                </div>
+                                <div class="slide-img">
+                                    <div class="slide-img-bg" style="background-image: url('./img/pexels-photo-267885.jpeg')">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="textnoidung text-transform-1">
+                            <h3>Vấn đề</h3>
+                            <em><small>Cho một đồ thị có hướng G(V,E), một hàm trọng số w:→E→R+ và một đỉnh s. Tìm đường đi ngắn nhất
+                                từ s tới mọi đỉnh trong G.</small></em>
+                                </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="motslide">
+                        <div class="anh" style="background-image: linear-gradient(to top,rgba(0,0,0, 0.8),rgba(0,0,0, 0.6)),
+                        url('./img/LRM_EXPORT_20191022_215029.jpg');background-position: center 80%">
+                            <div class="slide-content">
+                                <div class="slide-img">
+                                    <div class="slide-img-bg" style="background-image: url('./img/pexels-photo-356086.jpeg')"></div>
+                                </div>
+                                <div class="slide-img">
+                                    <div class="slide-img-bg" style="background-image: url('./img/pexels-photo-356086.jpeg')"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="textnoidung text-transform-1">
+                            <h3>Ứng dụng</h3>
+                            <em><small>Giúp tìm ra đường đi ngắn nhất đơn giản nhất</small></em>
+                        </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="chuyensilde">
+            <ul>
+                <li class="kichhoat">1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </div>
+        <div class="section-Perspective d-flex justify-content-end">
+            <div class="row pt-5">
+                <i class="fas fa-bars menu-bar"></i>
+            </div>
+            <div class="row home-menu">
+                <ul>
+                    <li>Home</li>
+                    <li> Giới thiệu</li>
+                    <li>Mô tả</li>
+                    <li>Cách sử dụng</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container-fluid up-icon">
+            <a href="#slidewrapper-id" style="transition: .5s;"><i class="fas fa-cloud-upload-alt"></i></a>
+        </div>
+    </div>
+
+    <main>
+
+        <div class="section-2">
+            <div class="container">
+                <div class="row">
+                    <h3 id="intro">giới <span style="color: #39d6c0">thiệu</span></h3>
+                </div>
+                <div class="row">
+                    <div class="nd-cot-1 flex-column d-flex justify-content-center align-items-center"
+                        style="background-color: #39d6c0;width: 60%;">
+                        <div class="content-col" style="width: 70%;">
+                            <h6>Thuật toán </h6>
+                            <h2>Dijkstra</h2>
+                            <p class="py-4" style="font-size: 80%">Thuật toán Dijkstra cho phép tìm đường đi ngắn nhất
+                                từ một đỉnh s đến các đỉnh còn lại của đồ thị và chiều dài (trọng số ) tương ứng. Phương
+                                pháp của thuật toán là xác định tuần tự đỉnh có chiều dài đến s theo thứ tự tăng dần.
+                                Thuật toán được xây dựng trên cơ sở gán cho mỗi đỉnh các nhãn tạm thời. Nhãn tạm thời
+                                của các đỉnh cho biết cận trên của chiều dài đường đi ngắn nhất từ s đến đỉnh đó. Nhãn
+                                của các đỉnh sẽ biến đổi trong các bước lặp, mà ở mỗi bước lặp sẽ có một nhãn tạm thời
+                                trở thành chính thức. Nếu nhãn của một đỉnh nào đó trở thành chính thức thì đó cũng
+                                chính là chiều dài ngắn nhất của đường đi từ s đến đỉnh đó.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="nd-cot-2" style="width:40%;">
+                        <div class="anh"></div>
+                    </div>
+                </div>
+                <div class="row"   id="describe">
+                    <div class="nd-cot-1" style="width: 40%;">
+                        <div class="anh">
+                        </div>
+                    </div>
+                    <div class="nd-cot-2 flex-column d-flex justify-content-center align-items-center"
+                        style="width:60%;background-color: #fff;">
+                        <div class="content-col" style="width: 70%;">
+
+                            <h6>Mô tả</h6>
+                            <h2>Thuật toán</h2>
+                            <p class="py-4" style="font-size: 80%">
+                                Trước hết ta xét s và các hàng xóm của nó, gọi là tập N(s). Gọi u là một hàng xóm với độ dài cạnh
+                                w(s→u) nhỏ nhất. Khoảng cách ngắn nhất từ s tới u là bao nhiêu? Câu trả lời chính là
+                                w(s→u), vì nếu không, đường đi ngắn nhất từ s tới u đó phải đi qua một hàng xóm khác của
+                                s, và do đó, sẽ dài hơn w(s→u). Từ đó ta suy ra δ (s,u)= w(s→u).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-gallery">
+            <div class="container wrapper-gallery">
+                <div class="heading-gallery" id="howToUse">
+                    <div class="text-gallet">
+                        <h6>Ứng dụng </h6>
+                        <h2>& cách sử dụng</h2>
+                        <p class="p-before">Nhập các thông tin các cạnh vào ô tương ứng. Ở hình bên ta có cạnh AC dài
+                            4. Ta sẽ nhập ở ô input node là A, nhập C ở ô Neighbor và sau đó nhập 4 ở ô input length.
+                            Mỗi lần nhập xong một cạnh ta nhấn nút thêm thông tin. Sau đó có hai select cho ta chọn điểm xuất phát và
+                            điểm kết thúc. Ứng dụng sẽ dựa vào các thông tin vừa nhập để thưc hiện tìm đường đi ngắn
+                            nhất
+                            giữa điểm xuất phát và điểm kết thúc.
+                            <br>
+                            <em><b> Lưu ý:</b> Đối với đồ thị vô hướng không được nhập thông tin trùng nhau. Do 
+                                không được nhập thông tin trùng nhau nên khi một điểm có liên kết với cạnh khác nhưng
+                                đã được nhập thông tin rồi thì ta chỉ cần nhập tên điểm đó ở ô node còn 2 ô còn lại 
+                                ta viết chữ null.
+                                Ví dụ: Điểm A đến C có độ dài là 5. Khi ta đã nhập thông tin cho A đến C bằng
+                            5 rồi thì không được nhập thông tin đó lặp lại với điểm C. Tức không được nhập C đến
+                        A bằng 5 nữa.</em>
+                        </p>
+                        <p>Nhấn nút thực hiện ứng dụng sẽ hiện ra một thông báo đưa ra thông tin về đường đi ngắn nhất
+                            và
+                            độ dài đường đi đó.
+                        </p>
+
+                    </div>
+                    <div class="img-gallery">
+                        <div class="img-1" style="background-image:url(./img/1_lzYuC6dIVTVl0gt3MOuCyw.jpeg) ">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section-6">
+            <div class="container-fluid p-0 bg-carousel">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active">
+                                    <div class="wrapper-img">
+                                        <img src="./img/Just-Try-It.png"
+                                            style="width: 40%; transform: translateY(-16%);" alt="First slide">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="wrapper-text" id="tryIt">
+                            <span>Try it</span>
+                            <blockquote
+                                style="margin-left: -25%; color:#fff; font-size:20px;width: 80%; font-style:normal; font-weight:100;word-spacing:3px">
+                                Dưới đây là chương trình thực hiện thuật toán Dijkstra
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container number">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="wrapper-number">
+                            <h3>Node</h3>
+                            <div class="img-frame">
+                                <img src="./img/white-circle-pngc09-4dd3-a6e5-e4a33d437599.png" alt="">
+                                <input type="text" name="node" />
+                            </div>
+                            <p>Nhập các node </p>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 number-9">
+                        <div class="wrapper-number">
+                            <h3>Neighbor</h3>
+                            <div class="img-frame">
+                                <img src="./img/white-circle-pngc09-4dd3-a6e5-e4a33d437599.png" alt="">
+                                <input type="text" name="neighbor" />
+                            </div>
+                            <p>Nhập các điểm mà node đó lối tới</p>
+                            <form action="/action_page.php">
+                                <select name="cars" class="custom-select custom-select-sm my-4 section-value-start">
+                                </select>
+                            </form>
+                            <button type="button" id="btn-finish"
+                                style="border-radius: 0; font-size: 80%; font-weight: 400;"
+                                class="btn btn-outline-secondary text-white ml-4">Điểm đầu</button>
+                            <button type="button" id="btn-start"
+                                style="border-radius: 0; font-size: 80%; font-weight: 400;"
+                                class="btn btn-outline-secondary text-white">Điểm cuối</button>
+                            <div class="visible-value text-white mt-4"></div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 number-24">
+                        <div class="wrapper-number">
+                            <h3>Length</h3>
+                            <div class="img-frame">
+                                <img src="./img/white-circle-pngc09-4dd3-a6e5-e4a33d437599.png" alt="">
+                                <input type="text" name="length" />
+                            </div>
+                            <p>Nhập độ dài từ node đến các điểm</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center" style="margin-top: -6%;">
+                    <button class="btn btn-outline-info mr-5" id="btnaddNode" type="button"
+                        style="border-radius: 0; font-size: 80%; font-weight: 400;">Thêm node</button>
+                    <button type="button" id="btnres" style="border-radius: 0; font-size: 80%; font-weight: 400;"
+                        class="btn btn-outline-success mr-5" data-toggle="modal" data-target="#myModal">
+                        Thực hiện
+                    </button>
+
+                    <button type="button" id="btnReset" style="border-radius: 0; font-size: 80%; font-weight: 400;"
+                    class="btn btn-outline-warning mr-5">
+                        Làm lại
+                    </button>
+
+                    <div class="modal fade" id="myModal">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Modal Heading</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+
+                                <div class="modal-body">
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container-fluid p-0">
+            <div class="content-down">
+                <div class="social container py-4">
+                    <div class="row d-flex justify-content-between flex-row">
+                    </div>
+                </div>
+                <div class="container mb-2">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="heading-info"><h5>Thông tin sinh viên</h5></div>
+                            <div class="info">
+                                <cite>Họ và tên: Nguyễn Văn Cung</cite>
+                                <br>
+                                <cite>Mã Sinh Viên: 171200623</cite>
+                                <br>
+                                <cite>Lớp: CNTT4-K58</cite>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                        </div>
+                        <div class="col-md-4">
+                            <div class="heading-info"><h5>Thông tin Giảng viên</h5></div>
+                            <div class="info">
+                                <cite>Thầy: Nguyễn Thanh Toàn</cite>
+                                <br>
+                                <cite>Bộ môn: Mạng Máy Tính</cite>
+                                <br>
+                                <cite>Email: nttoan06@gmail.com</cite>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer_copy">
+                    <div class="container">
+                        <ul id="menu-main-menu-1" class="social-menu">
+                            <li
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-2 current_page_item menu-item-5">
+                                <a href="#slidewrapper-id" aria-current="page">Home</a>
+                            </li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38"><a
+                                    href="#intro">Giới thiệu</a></li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-75"><a
+                                    href="#describe">Mô tả</a></li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80"><a
+                                    href="#howToUse">Cách sử dụng</a>
+                            </li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81"><a
+                                    href="#tryIt">Try it</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+
+    <div id="myDiagramDiv" style="width: 300px; height: 300px; border: solid 1px black;"></div>
+    <div>
+        <div>
+          <button id="SaveButton" onclick="save()">Save</button>
+          <button onclick="load()">Load</button>
+          Diagram Model saved in JSON format:
+        </div>
+        <textarea id="mySavedModel" style="width:100%;height:500px; display: none;">
+        </textarea>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script  src = "https://unpkg.com/gojs/release/go-debug.js"></script>
+    <script src="./script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
