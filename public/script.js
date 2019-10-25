@@ -1,7 +1,8 @@
 const problems = {};
 var st="";
 var fs="";
-var arr=[];
+var checkInfo=[];
+var checkOption=[];
 var jsonStr={
   "class": "go.GraphLinksModel",
   "nodeKeyProperty": "id",
@@ -89,52 +90,55 @@ $('#btnaddNode').on('click', function() {
   let length = $('input[name="length"]').val();
   let btnFs=$('#btn-finish');
   let btnSt=$('#btn-start');
+  var s1=Math.floor(Math.random() * 100) + 50;
+  var s2=Math.floor(Math.random() * 200) + 100;
   let str1=name+neighbor;
   let str2=neighbor+name;
-  arr.push(str1);
-  var check=checkStr(arr,str2);
+  checkInfo.push(str1);
+  var checkFilterInfo=checkStr(checkInfo,str2);
   $('input[name="node"]').val('');
   $('input[name="neighbor"]').val('');
   $('input[name="length"]').val('');
   if(name===''||neighbor===''||length===''){
     alert('Mời nhập đầy đủ thông tin');
   }else if(name!==''&&neighbor==='null'&&length==='null'){
-    problems[name]={}
+    problems[name]={};
+    $('.section-value-start').append('<option value="'+name+'">'+name+'</option>');
+    var nameValue='{ "id":'+'"'+name+'"'+', "loc": '+'"'+s1+' '+s2+'"'+', "text":'+'"'+name+'"'+'}';
+    jsonStr.nodeDataArray.push(JSON.parse(nameValue));
+    console.log(jsonStr.nodeDataArray)
+    console.log(jsonStr.linkDataArray)
   }else{
     if(isNaN(length)){
       alert('Hãy nhập số trong ô lenght và chữ trong ô name, neighbor');
     }else{
-      if(check.length!==0){
+      if(checkFilterInfo.length!==0){
         alert('Bạn đã nhập trùng thông tin cho các node.');
       }else{
-        var s1=Math.floor(Math.random() * 100) + 50;
-        var s2=Math.floor(Math.random() * 200) + 100;
-        var s3=Math.floor(Math.random() * 150) + 50;
-        var s4=Math.floor(Math.random() * 250) + 100;
-        var nameValue='{ "id":'+'"'+name+'"'+', "loc": '+'"'+s1+' '+s2+'"'+', "text":'+'"'+name+'"'+'}';
-        var neighborValue='{ "id":'+'"'+neighbor+'"'+', "loc": '+'"'+s3+' '+s4+'"'+', "text":'+'"'+neighbor+'"'+'}';
         var linkNode='{ "from":'+ '"'+name+'"'+',"to":'+'"'+neighbor+'"'+',"text":'+'"'+length+'"'+'}';
-        jsonStr.nodeDataArray.push(JSON.parse(nameValue));
-        jsonStr.nodeDataArray.push(JSON.parse(neighborValue));
         jsonStr.linkDataArray.push(JSON.parse(linkNode));
-        console.log(jsonStr.nodeDataArray, jsonStr.linkDataArray)
-        load();
+        console.log(jsonStr.linkDataArray)
         btnFs.css('visibility','visible');
         btnSt.css('visibility','visible');
         if(problems[name] == undefined){
           problems[name]={}
+        }
+        if(!selectHasOption(document.querySelector('.section-value-start'), name)){
+          $('.section-value-start').append('<option value="'+name+'">'+name+'</option>');
+          var nameValue='{ "id":'+'"'+name+'"'+', "loc": '+'"'+s1+' '+s2+'"'+', "text":'+'"'+name+'"'+'}';
+          jsonStr.nodeDataArray.push(JSON.parse(nameValue));
+          console.log(jsonStr.nodeDataArray)
         }
         problems[name][neighbor] = parseInt(length)
         $(".visible-value").append(name+neighbor+"="+length+' | ');
         }
     }
    } 
-    $('.section-value-start').append('<option value="'+name+'">'+name+'</option>');
-    $('.section-value-finish').append('<option>'+name+'</option>');
-  console.log(problems);
+    console.log(problems);
 })
 
 $('#btnres').on('click', function() {
+  load();
   let modalBody=$('.modal-body');
   if(Object.keys(problems).length===0){
     modalBody.html('Mời nhập đầy đủ thông tin');
@@ -153,6 +157,15 @@ function checkStr(arr,str){
   return arr.filter(function(item){
     return str===item;
   })
+}
+
+function selectHasOption(select, value)
+{
+  for (i = 0; i < select.length; ++i) {
+    if (select.options[i].value == value) {
+       return true
+    }
+ }
 }
 
 const lowestCostNode = (costs, processed) => {
@@ -307,7 +320,7 @@ function init() {
         $(go.Shape,
           {
             fill: $(go.Brush, "Radial",
-              { 0: "rgb(255, 255, 255)", 0.3: "rgb(255, 255, 255)", 1: "rgba(255, 255, 255, 0)" }),
+              { 0: "rgb(242, 242, 242)", 0.3: "rgb(242, 242, 242)", 1: "rgba(242, 242, 242, 0)" }),
             stroke: null
           }),
         $(go.TextBlock, "transition",

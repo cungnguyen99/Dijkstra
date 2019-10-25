@@ -238,7 +238,12 @@
                             <h3>Node</h3>
                             <div class="img-frame">
                                 <img src="./img/white-circle-pngc09-4dd3-a6e5-e4a33d437599.png" alt="">
-                                <input type="text" name="node" />
+                                <div class="group">
+                                        <input type="text" name="node" required/>
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label>Name</label>
+                                </div>
                             </div>
                             <p>Nhập các node </p>
                         </div>
@@ -249,7 +254,12 @@
                             <h3>Neighbor</h3>
                             <div class="img-frame">
                                 <img src="./img/white-circle-pngc09-4dd3-a6e5-e4a33d437599.png" alt="">
-                                <input type="text" name="neighbor" />
+                                <div class="group">
+                                        <input type="text" name="neighbor" required/>
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label>Neighbor</label>
+                                </div>
                             </div>
                             <p>Nhập các điểm mà node đó lối tới</p>
                             <form action="/action_page.php">
@@ -271,42 +281,51 @@
                             <h3>Length</h3>
                             <div class="img-frame">
                                 <img src="./img/white-circle-pngc09-4dd3-a6e5-e4a33d437599.png" alt="">
-                                <input type="text" name="length" />
+                                <div class="group">
+                                        <input type="text" name="length" required/>
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label>Length</label>
+                                </div>
                             </div>
                             <p>Nhập độ dài từ node đến các điểm</p>
                         </div>
 
                     </div>
                 </div>
-                <div class="row d-flex justify-content-center" style="margin-top: -6%;">
-                    <button class="btn btn-outline-info mr-5" id="btnaddNode" type="button"
-                        style="border-radius: 0; font-size: 80%; font-weight: 400;">Thêm node</button>
-                    <button type="button" id="btnres" style="border-radius: 0; font-size: 80%; font-weight: 400;"
-                        class="btn btn-outline-success mr-5" data-toggle="modal" data-target="#myModal">
-                        Thực hiện
-                    </button>
-
-                    <button type="button" id="btnReset" style="border-radius: 0; font-size: 80%; font-weight: 400;"
-                    class="btn btn-outline-warning mr-5">
-                        Làm lại
-                    </button>
-
-                    <div class="modal fade" id="myModal">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-
-                                <div class="modal-header">
-                                    <h4 class="modal-title">Modal Heading</h4>
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <div class="row d-flex flex-row">
+                    <div class="col-md-5" style="margin-top: -16%;">
+                        <div id="myDiagramDiv" style="width: 400px; height: 300px"></div>
+                    </div>
+                    <div class="col-md-7" style="margin-top: -6%;">
+                            <button class="btn btn-outline-info mr-5" id="btnaddNode" type="button"
+                            style="border-radius: 0; font-size: 80%; font-weight: 400;">Thêm node</button>
+                        <button type="button" id="btnres" style="border-radius: 0; font-size: 80%; font-weight: 400;"
+                            class="btn btn-outline-success mr-5" data-toggle="modal" data-target="#myModal">
+                            Thực hiện
+                        </button>
+                        <button type="button" id="btnReset" style="border-radius: 0; font-size: 80%; font-weight: 400;"
+                        class="btn btn-outline-warning mr-5">
+                            Làm lại
+                        </button>
+    
+                        <div class="modal fade" id="myModal">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+    
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Modal Heading</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+    
+                                    <div class="modal-body">
+                                    </div>
+    
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+    
                                 </div>
-
-                                <div class="modal-body">
-                                </div>
-
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                </div>
-
                             </div>
                         </div>
                     </div>
@@ -371,18 +390,6 @@
         </div>
         </div>
     </footer>
-
-    <div id="myDiagramDiv" style="width: 300px; height: 300px; border: solid 1px black;"></div>
-    <div>
-        <div>
-          <button id="SaveButton" onclick="save()">Save</button>
-          <button onclick="load()">Load</button>
-          Diagram Model saved in JSON format:
-        </div>
-        <textarea id="mySavedModel" style="width:100%;height:500px; display: none;">
-        </textarea>
-      </div>
-    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script  src = "https://unpkg.com/gojs/release/go-debug.js"></script>
     <script src="./script.js"></script>
