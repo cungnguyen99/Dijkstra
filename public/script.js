@@ -75,7 +75,9 @@ $('#btn-start').on('click', function() {
 $('#btnReset').on('click',function(){
   for (var key in problems) {
     delete problems[key];
-  }
+  } 
+  jsonStr.linkDataArray=[];
+  jsonStr.nodeDataArray=[];
   $(".visible-value").empty();
   $('.section-value-start').children().remove()
   $('#btn-finish').addClass('isHidden');
@@ -83,7 +85,6 @@ $('#btnReset').on('click',function(){
   $('#btn-start').addClass('isHidden');
   $('#btn-start').css('visibility','');  
 })
-
 $('#btnaddNode').on('click', function() {
   let name = $('input[name="node"]').val();
   let neighbor = $('input[name="neighbor"]').val();

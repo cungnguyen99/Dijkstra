@@ -110,7 +110,6 @@ h6{
     animation-delay: .2s;
 }
 .cacslide ul li.active .anh .slide-content .slide-img .slide-img-bg{
-    background-position: center 45px;
     height: 100%;
     position: absolute;
     left: 0;
@@ -118,8 +117,8 @@ h6{
     width: 50vw;
     height: 100%;
     background-size: cover;
-    background-position: 50%;
-    transform: translateY(-50px);
+    background-position: 70% 40px;
+    transform: translateY(-60px);
     transition: all .4s;
 }
 @-webkit-keyframes move{
@@ -145,7 +144,7 @@ h6{
     right: 0;
 }
 .cacslide ul li.active .anh .slide-content .slide-img:last-child .slide-img-bg {
-    background-position: center -45px;
+    background-position: 50% -10px;
     height: 100%;
 }
 .cacslide ul li.active .anh .slide-content .slide-img:last-child .slide-img-bg {
@@ -156,11 +155,11 @@ h6{
     transform: translateY(40px);
 }
 .cacslide ul li.active .anh .slide-content:hover .slide-img .slide-img-bg{
-    background-position: center 25px;
+    background-position: center 60px;
     cursor: pointer;
 }
 .cacslide ul li.active .anh .slide-content:hover .slide-img:last-child .slide-img-bg{
-    background-position: center -75px;
+    background-position: center -40px;
     cursor: pointer;
 }
 .chuyensilde{
@@ -609,6 +608,9 @@ input:focus ~ .highlight {
     overflow: hidden;
 }
 /* ---------section-Perspective------------- */
+.section-Perspective a:hover{
+    text-decoration: none;
+}
 .section-Perspective{
     position: absolute;
     top:0;
